@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #bec1c5, #597cac);
+}
+
+nav {
+    background: linear-gradient(90deg, hsl(237, 73%, 28%), hsl(223, 62%, 46%));
+    padding: 10px 5px;
+    border-radius: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #bec1c5, #597cac);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+
+.logo {
+    width: 85px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+      transform: scale(1.2) rotate(-5deg);
+}
+
+.header-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header-wrapper h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #7fcaff, #ffffff, #7fcaff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(0,0,0,0.35);
+    animation: headerGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 100% center; }
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #c5e5f5;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 12px;
+    background: #6a89cc;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #5a79b4;
+    transform: scale(1.05);
+}
+
+
+.logo-load {
+    animation: logoSpin 0.8s ease-out forwards;
+}
+
+
+.logo {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    --scale: 1;   
+    --rotate: 0deg; 
+    transform: scale(var(--scale)) rotate(var(--rotate));
+    transition: transform 0.35s ease; 
+}
+
+
+.logo:hover {
+    --scale: 1.15;
+    --rotate: -4deg;
+}
+
+
+.logo-load {
+    animation: logoSpin 0.8s ease-out forwards;
+}
+
+@keyframes logoSpin { 
+    0% { transform: scale(0) rotate(-360deg); opacity:0; }
+    100% { transform: scale(1) rotate(0deg); opacity:1; }
+}
+   
+
+
+.fade-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeItem 0.6s ease-out forwards;
+}
+
+@keyframes fadeItem {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-item:nth-child(1) { animation-delay: 0.1s; }
+.fade-item:nth-child(2) { animation-delay: 0.2s; }
+.fade-item:nth-child(3) { animation-delay: 0.3s; }
+.fade-item:nth-child(4) { animation-delay: 0.4s; }
+.fade-item:nth-child(5) { animation-delay: 0.5s; }
+
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: pageFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes pageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

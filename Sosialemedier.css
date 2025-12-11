@@ -1,0 +1,115 @@
+/* GENERELT */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #bec1c5, #597cac);
+    color: white;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* NAV / LOGO */
+.top-header {
+    background: linear-gradient(90deg, hsl(223, 65%, 23%), hsl(223, 55%, 35%), hsl(223, 45%, 28%));
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+/* HEADER */
+.header-wrapper {
+    background: linear-gradient(90deg, #4a8cff, #3b6ac3);
+    padding: 25px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 800px;
+}
+
+.header-wrapper h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px #7fcaff, 0 0 10px #7fcaff, 0 0 20px #4a8cff;
+    animation: glowMove 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    0% {
+        text-shadow: 0 0 5px #7fcaff, 0 0 10px #7fcaff, 0 0 20px #4a8cff;
+    }
+    50% {
+        text-shadow: 0 0 10px #a1c4ff, 0 0 20px #7fcaff, 0 0 40px #4a8cff;
+    }
+    100% {
+        text-shadow: 0 0 5px #7fcaff, 0 0 10px #7fcaff, 0 0 20px #4a8cff;
+    }
+}
+
+/* SOSIALE MEDIA BOXER */
+.social-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.social-box {
+    background: linear-gradient(135deg, #4a8cff, #3b6ac3);
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+.social-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    background: linear-gradient(135deg, #6a89cc, #051f68);
+}
+
+.social-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-box a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-box a:hover .social-logo {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+.social-box span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}

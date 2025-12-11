@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="prosjekter.css">
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosjekter</title>
+  <link rel="stylesheet" href="projects.css">
+    
+    <link rel="icon" type="image/png" href="THEO.png">
+</head>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html"><img src="THEO.png" alt="Logo" class="logo logo-load"></a></li>
+    <li style="margin-left:auto;">
+      <input type="text" id="searchBox" placeholder="Søk prosjekter...">
+    </li>
+  </ul>
+</nav>
+
+<div class="header-wrapper">
+  <div class="header-box">
+    <h1>Prosjekter</h1>
+  </div>
+</div>
+
+<div class="projects-wrapper">
+  <div class="project-card"><span>Prosjekt 1</span></div>
+  <div class="project-card"><span>Prosjekt 2</span></div>
+  <div class="project-card"><span>Prosjekt 3</span></div>
+  <div class="project-card"><span>Prosjekt 4</span></div>
+  <div class="project-card"><span>Prosjekt 5</span></div>
+  <div class="project-card"><span>Prosjekt 6</span></div>
+  <div class="project-card"><span>Prosjekt 7</span></div>
+  <div class="project-card"><span>Prosjekt 8</span></div>
+</div>
+
+<script>
+const searchBox = document.getElementById('searchBox');
+const projects = document.querySelectorAll('.project-card');
+
+searchBox.addEventListener('input', () => {
+  const query = searchBox.value.toLowerCase();
+  projects.forEach(project => {
+    const text = project.innerText.toLowerCase();
+    if (text.includes(query) || query === '') {
+      project.style.display = 'flex';
+    } else {
+      project.style.display = 'none';
+    }
+  });
+});
+</script>
+
+    <div class="box fade-item">...</div>
+<div class="box fade-item">...</div>
+<div class="box fade-item">...</div>
+
+</body>
+</html>

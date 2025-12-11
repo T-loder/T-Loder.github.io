@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">   
+    <title>Portfolio</title>
+
+    
+    <link rel="icon" type="image/png" href="THEO.png">
+</head>
+</head>
+
+
+<body>
+<nav>
+  <ul>
+    <li><img src="THEO.png" alt="logo" class="logo"></li>
+    <li style="margin-left: auto;">
+      <input type="text" id="searchBox" placeholder="Søk..." />
+    </li>
+  </ul>
+</nav>
+
+
+
+
+<div class="header-wrapper">
+  <h1>Theo's Portfolio!</h1>
+</div>
+
+<div class="boxes-wrapper">
+  <a href="ommeg.html" class="box"><span>Om Meg</span></a>
+  <a href="prosjekter.html" class="box"><span>Prosjekter</span></a>
+  <a href="musikk.html" class="box"><span>Musikk</span></a>
+  <a href="kontakt.html" class="box"><span>Kontakt meg</span></a>
+  <a href="VerktøyOgResurser.html" class="box"><span>Verktøy</span></a>
+  <a href="bilder.html" class="box"><span>Bilder</span></a>
+  <a href="filmer.html" class="box"><span>Filmer</span></a>
+  <a href="SosialeMedier.html" class="box"><span>Medier</span></a>
+  <a href="spill.html" class="box"><span>Spill</span></a>
+  <a href="nettsideinfo.html" class="box"><span>Nettside Info</span></a>
+   <a href="IKKETRYKK.html" class="box"><span>ikke trykk!</span></a>
+  <a href="Reaksjonstest.html" class="box"><span>Reaksjon</span></a>
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+<script>
+const searchBox = document.getElementById('searchBox');
+const boxes = document.querySelectorAll('.boxes-wrapper .box');
+
+searchBox.addEventListener('input', () => {
+    const query = searchBox.value.toLowerCase();
+    let found = false;
+
+    boxes.forEach(box => {
+        const text = box.innerText.toLowerCase();
+        if (text.includes(query) && query !== '') {
+            box.style.display = 'flex';  // show matching box
+            box.style.margin = '0 auto'; // center
+            found = true;
+        } else {
+            box.style.display = 'none';  // hide non-matching boxes
+        }
+    });
+
+    if (!query) {
+        boxes.forEach(box => {
+            box.style.display = 'flex';   // show all again
+            box.style.margin = '0';       // reset margins
+        });
+    }
+});
+</script>

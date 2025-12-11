@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="musikk.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="musikk.css">
+    <title>Musikk</title>
+       
+    <link rel="icon" type="image/png" href="THEO.png">
+</head>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="logo-item">
+            <a href="index.html">
+                <img src="THEO.png" alt="Logo" class="logo logo-load">
+            </a>
+        </li>
+        <li style="margin-left: auto;">
+            <input type="text" id="searchBox" placeholder="Søk..." />
+        </li>
+    </ul>
+</nav>
+
+
+<div class="music-wrapper">
+
+    
+    <div class="music-box">
+        <img src="Theo's_World.png" alt="Cover 1" class="cover">
+        <div class="music-info">
+            <span class="song-title">DrumH</span>
+            <audio id="audio1" src="DRUMH, Ft, Morten Felix.mp3"></audio>
+            <div class="player">
+                <button class="play-btn" onclick="togglePlay('audio1')">▶</button>
+                <input type="range" min="0" max="100" value="0" class="progress" id="progress1">
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="music-box">
+        <img src="Theo's_World.png" alt="Cover 2" class="cover">
+        <div class="music-info">
+            <span class="song-title">Yo Mama</span>
+            <audio id="audio2" src="YO_MAMA.mp3"></audio>
+            <div class="player">
+                <button class="play-btn" onclick="togglePlay('audio2')">▶</button>
+                <input type="range" min="0" max="100" value="0" class="progress" id="progress2">
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="music-box">
+        <img src="Theo's_World.png" alt="Cover 3" class="cover">
+        <div class="music-info">
+            <span class="song-title">Blind Whenever</span>
+            <audio id="audio3" src="Blind Whenever.mp3"></audio>
+            <div class="player">
+                <button class="play-btn" onclick="togglePlay('audio3')">▶</button>
+                <input type="range" min="0" max="100" value="0" class="progress" id="progress3">
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="music-box">
+        <img src="cover4.png" alt="Cover 4" class="cover">
+        <div class="music-info">
+            <span class="song-title">Sang 4</span>
+            <audio id="audio4" src="sang4.mp3"></audio>
+            <div class="player">
+                <button class="play-btn" onclick="togglePlay('audio4')">▶</button>
+                <input type="range" min="0" max="100" value="0" class="progress" id="progress4">
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="music-box">
+        <img src="cover5.png" alt="Cover 5" class="cover">
+        <div class="music-info">
+            <span class="song-title">Sang 5</span>
+            <audio id="audio5" src="sang5.mp3"></audio>
+            <div class="player">
+                <button class="play-btn" onclick="togglePlay('audio5')">▶</button>
+                <input type="range" min="0" max="100" value="0" class="progress" id="progress5">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+    <div class="box fade-item">...</div>
+<div class="box fade-item">...</div>
+<div class="box fade-item">...</div>
+
+</body>
+
+<script>
+function togglePlay(audioId) {
+    const audio = document.getElementById(audioId);
+    const btn = audio.parentElement.querySelector('.play-btn');
+    const progress = audio.parentElement.querySelector('.progress');
+
+    
+    document.querySelectorAll('audio').forEach(a => {
+        if(a.id !== audioId) {
+            a.pause();
+            a.parentElement.querySelector('.play-btn').innerText = '▶';
+        }
+    });
+
+    if(audio.paused) {
+        audio.play();
+        btn.innerText = '⏸';
+    } else {
+        audio.pause();
+        btn.innerText = '▶';
+    }
+
+    
+    audio.ontimeupdate = () => {
+        const value = (audio.currentTime / audio.duration) * 100;
+        progress.value = value || 0;
+    };
+
+   
+    progress.oninput = () => {
+        audio.currentTime = (progress.value / 100) * audio.duration;
+    };
+
+    audio.onended = () => {
+        btn.innerText = '▶';
+        progress.value = 0;
+    };
+}
+</script>
+
+
+</html>

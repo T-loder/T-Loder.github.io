@@ -1,0 +1,190 @@
+/* Fade-in on load */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #bec1c5, #597cac);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* HEADER */
+.top-header {
+    background: linear-gradient(90deg, hsl(223, 65%, 23%), hsl(223, 55%, 35%), hsl(223, 45%, 28%));
+    padding: 20px 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    user-select: none;
+}
+
+/* LOGO – smooth hover in & out */
+.logo {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    transition: transform 0.35s ease;  /* SMOOTH BOTH WAYS */
+}
+
+.logo:hover {
+    transform: scale(1.15) rotate(-4deg);
+}
+
+/* HEADER TITLE STYLE */
+.title {
+    font-size: 55px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #b8d1ff, #ffffff, #b6c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+    animation: gentleGlow 4s infinite alternate;
+    margin: 0;
+}
+
+@keyframes gentleGlow {
+    0%   { text-shadow: 0 0 6px rgba(255,255,255,0.4); }
+    100% { text-shadow: 0 0 14px rgba(255,255,255,0.9); }
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 175px 40px; /* øker avstanden fra header */
+    align-items: flex-start;
+}
+
+
+/* TEXT LEFT SECTION */
+.text-section {
+    width: 45%;
+    color: #072144;
+}
+
+.text-section h2 {
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.text-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.profile-img {
+    width: 320px;
+    height: 320px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    animation: slideIn 0.7s ease;
+
+    /* new hover animation settings */
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+.profile-img:hover {
+    transform: scale(1.08) rotate(-2deg); /* smooth pop + liten tilt */
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35); /* sterkere skygge */
+}
+
+
+.profile-img {
+    width: 320px;
+    height: 320px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    animation: slideIn 0.7s ease;
+
+    /* NEW: smooth hover */
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* NEW: hover pop-out effect */
+.profile-img:hover {
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.logo-load {
+    animation: logoSpin 0.8s ease-out forwards;
+}
+
+@keyframes logoSpin {
+    0% {
+        transform: scale(0) rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.fade-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeItem 0.6s ease-out forwards;
+}
+
+@keyframes fadeItem {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-item:nth-child(1) { animation-delay: 0.1s; }
+.fade-item:nth-child(2) { animation-delay: 0.2s; }
+.fade-item:nth-child(3) { animation-delay: 0.3s; }
+.fade-item:nth-child(4) { animation-delay: 0.4s; }
+.fade-item:nth-child(5) { animation-delay: 0.5s; }
+
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: pageFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes pageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+

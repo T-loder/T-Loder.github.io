@@ -1,0 +1,223 @@
+/* Base */
+body {
+    margin: 0;
+    padding: 0;
+    background: #081027;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header-bar {
+    width: 100%;
+    padding: 20px 40px;
+    background: linear-gradient(to right, #003366, #3399ff);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    position: relative;
+    animation: headerFade 0.9s ease;
+}
+
+/* Header fade animation */
+@keyframes headerFade {
+    0% { opacity: 0; transform: translateY(-15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #ffffff60, 0 0 25px #88c9ff70;
+    animation: titleGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* Glow pulse effect on title */
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 8px #77baff40; }
+    100% { text-shadow: 0 0 18px #aee0ff; }
+}
+
+/* Logo wrapper */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    animation: logoLoad 1s ease forwards;
+}
+
+/* On hover */
+.logo:hover {
+    transform: scale(1.15) rotate(4deg);
+    filter: drop-shadow(0 0 12px #aee0ff);
+}
+
+/* Logo spin + pop animation on load */
+@keyframes logoLoad {
+    0% { transform: scale(0) rotate(-220deg); opacity: 0; }
+    60% { transform: scale(1.2) rotate(10deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Content area */
+.info-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+/* Info boxes */
+.info-box {
+    background: rgba(255,255,255,0.07);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(200,200,255,0.25);
+    box-shadow: 0 0 18px rgba(0,140,255,0.25);
+    animation: boxFade 1s ease forwards;
+}
+
+/* Smooth box fade in */
+@keyframes boxFade {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-in class */
+.fade-in {
+    opacity: 0;
+    animation: fadeInSmooth 1.2s ease forwards;
+}
+
+@keyframes fadeInSmooth {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* List style */
+.info-box ul {
+    padding-left: 20px;
+}
+.info-box li {
+    margin-bottom: 6px;
+}
+
+/* Header */
+.header-bar {
+    width: 100%;
+    padding: 20px 40px;
+    background: linear-gradient(to right, #003366, #3399ff);
+    display: flex;
+    justify-content: flex-start;   /* logo til venstre */
+    align-items: center;
+    gap: 25px;                     /* avstand mellom logo og tittel */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    animation: headerFade 0.9s ease;
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+    transform-origin: center;
+    animation: logoLoad 1s ease forwards;
+    transition: transform 0.35s ease;   /* smooth pop-out */
+}
+
+/* Same hover animation as your other pages */
+.logo:hover {
+    transform: scale(1.15) rotate(3deg);
+}
+
+/* Fix load animation — same style as film siden */
+@keyframes logoLoad {
+    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+    70% { transform: scale(1.25) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+
+
+/* Header bar */
+.header-bar {
+    width: 100%;
+    padding: 20px 40px;
+    background: linear-gradient(to right, #003366, #3399ff);
+    display: flex;
+    align-items: center;
+    gap: 25px; /* avstand mellom logo og tittel */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px; /* flytter logoen litt til høyre */
+    transform-origin: center;
+    animation: logoLoad 1s ease forwards;
+    transition: transform 0.35s ease; /* smooth pop-out */
+}
+
+/* Hover pop-out */
+.logo:hover {
+    transform: scale(1.15);
+}
+
+/* Load-in rotasjon + pop */
+@keyframes logoLoad {
+    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+    70% { transform: scale(1.25) rotate(8deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Header title styling */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    animation: titleFade 1s ease;
+}
+
+/* Fade-in for header text */
+@keyframes titleFade {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* BASE LOGO STYLING */
+.logo {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    --scale: 1;   /* variabel for scale */
+    --rotate: 0deg; /* variabel for rotate */
+    transform: scale(var(--scale)) rotate(var(--rotate));
+    transition: transform 0.35s ease; /* smooth for hover */
+}
+
+/* HOVER POP */
+.logo:hover {
+    --scale: 1.15;
+    --rotate: -4deg;
+}
+
+/* LOAD-IN ANIM */
+.logo-load {
+    animation: logoSpin 0.8s ease-out forwards;
+}
+
+@keyframes logoSpin {
+   
